@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="cn" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>查询结果</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="/static/css/reset.css" rel="stylesheet">
+    <!-- Bootstrap3.3.5 CSS -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/queryResult.css" rel="stylesheet">
+
+  </head>
+  <body>
+  
+  <div class="container">
+      <div class="queryResule">
+          <h2>产品信息查询结果</h2>
+          {{if .History}}
+            <div id="tableDiv">
+                <table id="table" style="margin: 0 auto;">
+                    <tr>
+                        <td>运输公司</td>
+                        <td>产品名称</td>
+                        <td>GSI编号</td>
+                        <td>产品描述</td>
+                        <td>制造方式</td>
+                        <td>产品规格</td>
+                        <td>产品来源</td>
+                        <td>生产厂商</td>
+                        <td>备注信息</td>
+                        <td>修改时间</td>
+                    </tr>
+                    {{range .Com.Historys}}
+                        <tr>
+                            <td>{{.Commodity.Type}}</td>
+                            <td>{{.Commodity.Name}}</td>
+                            <td>{{.Commodity.Primarykey}}</td>
+                            <td>{{.Commodity.Des}}</td>
+                            <td>{{.Commodity.Machining}}</td>
+                            <td>{{.Commodity.Specification}}</td>
+                            <td>{{.Commodity.Source}}</td>
+                            <td>{{.Commodity.Vendor}}</td>
+                            <td>{{.Commodity.Remarks}}</td>
+                            <td>{{.Commodity.Time}}</td>
+                        </tr>
+                    {{end}}
+                </table>
+            </div>
+          {{end}}
+          <div class="top">
+              <div class="left">
+                  <p>
+                      <span>产品名称：</span>
+                      <span>{{.Com.Name}}</span>
+                  </p>
+                  <p>
+                      <span>GSI溯源编号：</span>
+                      <span>{{.Com.Primarykey}}</span>
+                  </p>
+                  <p>
+                      <span>产品规格：</span>
+                      <span>{{.Com.Specification}}</span>
+                  </p>
+                  <p>
+                      <span>产品描述：</span>
+                      <span>{{.Com.Des}}</span>
+                  </p>
+                  <p>
+                      <span>产品来源：</span>
+                      <span>{{.Com.Source}}</span>
+                  </p>
+                  <p>
+                      <span>备注信息：</span>
+                      <span>{{.Com.Remarks}}</span>
+                  </p>
+              </div>
+              <div class="right">
+                  <p>
+                      <span>产品保质期：</span>
+                      <span>{{.Com.ShelfLife}}</span>
+                  </p>
+                  <p>
+                      <span>储存方式：</span>
+                      <span>{{.Com.StorageMethod}}</span>
+                  </p>
+                  <p>
+                      <span>产品品牌：</span>
+                      <span>{{.Com.Brand}}</span>
+                  </p>
+                  <p>
+                      <span>生产厂商：</span>
+                      <span>{{.Com.Vendor}}</span>
+                  </p>
+                  <p>
+                      <span>生产地：</span>
+                      <span>{{.Com.PlaceOfProduction}}</span>
+                  </p>
+
+                  <p>
+                      <span>执行标准：</span>
+                      <span>{{.Com.ExecutiveStandard}}</span>
+                  </p>
+              </div>
+              <div class="headImg">
+                  <img src="{{.Com.Photo}}" alt="">
+              </div>
+          </div>
+          <p>
+              {{if eq .CurrentUser.IsAdmin "T"}}
+                  <a href="/modifyPage?entityID={{.Com.Primarykey}}">增加溯源信息</a>
+              {{end}}
+              <a href="/index">返回首页</a>
+          </p>
+          <div class="bottom">
+              <p><b>声明</b></p>
+              <p>1、未经所属人同息,不得将本材科用于违背权属人意愿之用速,产品信息内容标注“*”号,表示该内容不详,产品信息如有修改,请以网站在线查询内容为准则。</p>
+              <p>2、产品证书查询结果仅供查询人使用,不具有再验证功能,如需向第三方提供产品信息,建议使用具有检证功能的产品注册备案表。</p>
+          </div>
+      </div>
+  </div>
+  </body>
+</html>

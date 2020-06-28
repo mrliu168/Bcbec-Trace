@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="cn" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>查询</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="/static/css/reset.css" rel="stylesheet">
+    <!-- Bootstrap3.3.5 CSS -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/query.css">
+    <link rel="stylesheet" href="/static/css/index2.css" type="text/css">
+    <script type="text/javascript" src="/static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="/static/js/public.js"></script>
+  </head>
+  <body>
+  <div class="top_bg" id="top_bg">
+    <div class="top_line">
+      <p>
+        <span>基于区块链技术跨境电商供应链数据来源追溯平台</span>
+        <a><img src="/static/images/top_tel.png">联系我们</a>
+      </p>
+    </div>
+    <div class="top_main">
+      <div class="top_logo">
+        <a href='./'><img src="/static/images/logo.png"></a>
+      </div>
+
+      <div class="dh_bg">
+        <ul>
+          <li>
+            <a href="/index.html">
+              <i class="img dh_01HOME"></i>
+              <span>网站首页</span>
+            </a>
+          </li>
+          <li class="cur">
+            <a href="about.html">
+              <i class="img dh_02COMPASS"></i>
+              <span>公司概况</span>
+            </a>
+          </li>
+          <li>
+            <a href="/queryPage">
+              <i class="img dh_03TARGET"></i>
+              <span>溯源查询</span>
+            </a>
+          </li>
+          <li>
+            <a href="caselist.html">
+              <i class="img dh_04GRID"></i>
+              <span>成功案例</span>
+            </a>
+          </li>
+          <li>
+            <a href="/help">
+              <i class="img dh_05NOTEPAD"></i>
+              <span>用户中心</span>
+            </a>
+          </li>
+          <li>
+            <a href="message.html">
+              <i class="img dh_06PEN"></i>
+              <span>在线留言</span>
+            </a>
+          </li>
+          <li>
+            <a href="/loginout">
+              <i class="img dh_07USER"></i>
+              <span>管理员入口</span>
+            </a>
+          </li>
+          <li>
+            <a href="/loginout">
+              <i class="img dh_07USER"></i>
+              <span>注册/登录</span>
+            </a>
+          </li>
+        </ul>
+        <!-- 背景块 -->
+        <div class="dh_bg_cur">
+          <img src="/static/images/nav_cur.png">
+        </div>
+
+        <!-- 二级菜单 -->
+        <div class="two_nav_box">
+          <div class="two_nav">
+            <span></span>
+            <div>
+              <dl>
+                <i></i>
+                <dt><a href="about.html">公司简介</a></dt>
+              </dl>
+              <dl>
+                <i></i>
+                <dt><a href="#">企业文化</a></dt>
+              </dl>
+              <dl>
+                <i></i>
+                <dt><a href="#">发展历程</a></dt>
+              </dl>
+            </div>
+          </div>
+          <div class="two_nav">
+            <span></span>
+            <div>
+              <dl>
+                <i></i>
+                <dt><a href="productslist.html">微型医疗器械</a></dt>
+                <dd><a href="#">空心纤维透析器</a></dd>
+                <dd><a href="#">脉搏波血压计</a></dd>
+                <dd><a href="#">三高测量仪</a></dd>
+              </dl>
+              <dl>
+                <i></i>
+                <dt><a href="#">家用医疗器械</a></dt>
+                <dd><a href="#">家用制氧机</a></dd>
+                <dd><a href="#">脉搏波血压计</a></dd>
+              </dl>
+              <dl>
+                <i></i>
+                <dt><a href="#">大型医疗器械</a></dt>
+                <dd><a href="#">磁共振成像</a></dd>
+                <dd><a href="#">高频电刀</a></dd>
+                <dd><a href="#">脉搏波血压计</a></dd>
+                <dd><a href="#">X射线机</a></dd>
+              </dl>
+              <dl>
+                <i></i>
+                <dt><a href="#">新型医疗器械</a></dt>
+                <dd><a href="#">大脑探测仪</a></dd>
+                <dd><a href="#">AI治疗仪</a></dd>
+              </dl>
+            </div>
+          </div>
+          <div class="two_nav">
+            <span></span>
+            <div>
+              <dl>
+                <i></i>
+                <dt><a href="caselist.html">医疗机构案例</a></dt>
+              </dl>
+              <dl>
+                <i></i>
+                <dt><a href="#">家用器械案例</a></dt>
+              </dl>
+            </div>
+          </div>
+          <div class="two_nav">
+            <span></span>
+            <div>
+              <dl>
+                <i></i>
+                <dt><a href="newslist.html">公司动态</a></dt>
+              </dl>
+              <dl>
+                <i></i>
+                <dt><a href="#">行业新闻</a></dt>
+              </dl>
+              <dl>
+                <i></i>
+                <dt><a href="#">员工活动</a></dt>
+              </dl>
+            </div>
+          </div>
+        </div>
+        <!-- 二级菜单end -->
+      </div>
+      <!-- 导航菜单 end -->
+    </div>
+  </div>
+    <div class="container">
+      <h2>产品信息查询</h2>
+      <div id="query">
+            <div class="left">
+              <form action="/query2" method="post" name="queryForm">
+                <p>
+                  GSI溯源编号：
+                  <input type="text" class="input_text" name="entityID" onfocus="if(this.placeholder=='绑定产品的溯源编号'){this.placeholder='';}this.className ='input_text input_text_focus'" onblur="if(this.value==''){this.placeholder='绑定产品的溯源编号';this.className ='input_text'}" value="" placeholder="绑定产品的溯源编号" maxlength="18">
+                </p>
+                <p>
+                  <button type="button" name="button" class="btn">免费查询</button>
+                </p>
+                <a href="/index">返回首页</a>
+                <a href="/queryPage">根据GSI溯源编号查询</a>
+              </form>
+            </div>
+        <div class="right">
+          <p><b>注意</b></p>
+          <p>1、点此查看<a href="./help.html">查询范围。</a></p>
+          <p>2、查询结果仅供参考。</p>
+          <p>3、产品查询结果不得用于商家权属人意愿之用途。</p>
+          <p>4、不知道GSI编号的,可咨询产品来源商家。</p>
+          <p>5、服务咨询热线:+86-183388003472 <br/>邮箱:1105058257@qq.com</p>
+        </div>
+      </div>
+      <!-- data-backdrop="false"去除遮罩层  -->
+      <div class="modal fade bd-example-modal-sm"  id="myModal" role="dialog" data-backdrop="false"  aria-hidden="true">
+          <div class="modal-dialog modal-sm">
+              <div class="modal-content">
+                  <p class="text-center mb-0" style="height:42px;line-height:42px;margin:0;">
+                      <i class="fa fa-check-circle text-success mr-1" aria-hidden="true"></i>
+                      请输入要查询的产品溯源GSI编号
+                  </p>
+              </div>
+          </div>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+  <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      var inputs = $('input[type="text"]');
+      // 提交按钮
+      $('.btn').click(function() {
+        // 如果为空 报错提示
+        for (var i = 0; i < inputs.length; i++) {
+          if (!($(inputs[i]).val())) {
+            $(inputs[i]).addClass('redColor');
+            $('#myModal').modal('show');
+            setTimeout(function(){
+              $("#myModal").modal("hide");
+            },2000);
+            return;
+          }
+        }
+
+        // 成功后提交数据
+        //$(location).attr('href','queryResult.html');
+        $("form[name='queryForm']").submit()
+      })
+    })
+  </script>
+</html>
